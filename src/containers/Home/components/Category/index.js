@@ -138,7 +138,7 @@ class Category extends Component {
     render() {
         const settings = {
             dots: true,
-            arrow: false,
+            arrows: false,
             slidesToShow: 1,
             swipeToSlide: true,
             autoplay: true
