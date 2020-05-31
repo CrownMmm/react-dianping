@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ProductOverview from './components/ProductOverview';
 import ShopInfo from './components/Shopinfo';
 import Detail from './components/Detail';
+import Remark from './components/Remark';
+
 
 
 class ProductDetail extends Component {
@@ -11,6 +13,7 @@ class ProductDetail extends Component {
                 <ProductOverview />
                 <ShopInfo />
                 <Detail />
+                <Remark />
             </div>
         );
     }
