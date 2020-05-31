@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import ProductOverview from './components/ProductOverview';
+import ShopInfo from './components/Shopinfo';
+import Detail from './components/Detail';
 
-import ProductOverview from './components/ProductOverview'
 
 class ProductDetail extends Component {
     render() {
         return (
             <div>
-                <ProductOverview/>
+                <ProductOverview />
+                <ShopInfo />
+                <Detail />
             </div>
         );
     }
