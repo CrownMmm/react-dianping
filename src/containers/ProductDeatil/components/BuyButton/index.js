@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css'
 
 class BuyButton extends Component {
   render() {
+    const { productId } = this.props
     return (
-      <a className="buyButton">
+      <Link to={`${productId}`} className="buyButton">
         立即购买
-      </a>
+      </Link>
     );
   }
 }
