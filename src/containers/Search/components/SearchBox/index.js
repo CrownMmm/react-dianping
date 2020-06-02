@@ -51,9 +51,9 @@ class SearchBox extends Component {
         );
     }
 
-    handleCancel = ()=> {
+    handleCancel = () => {
         console.log(1);
-        
+
     }
 
     handleClear = () => {
@@ -72,9 +72,9 @@ class SearchBox extends Component {
         return (
             <ul className="searchBox__list">
                 {
-                    data.map(item => {
+                    data.map((item, index) => {
                         return (
-                            <li className="searchBox__item">
+                            <li className="searchBox__item" key={index}>
                                 <span className="searchBox__itemKeyworkd">{item.keyword}</span>
                                 <span className="searchBox__itemQuantity">约{item.quantity}个结果</span>
                             </li>
