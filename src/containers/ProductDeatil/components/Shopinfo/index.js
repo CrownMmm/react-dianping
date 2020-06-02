@@ -24,9 +24,9 @@ class ShopInfo extends Component {
               <span className="shopInfo__distance">>100km</span>
             </div>
           </div>
-          {/* <a className="shopInfo__middleRight" href={`tel://${phone}`}> */}
+          <a className="shopInfo__middleRight" href={`tel://${phone}`}>
             <i className="shopInfo__phoneIcon" />
-          {/* </a> */}
+          </a>
         </div>
         <div className="shopInfo__bottom">
           <i className="shopInfo__locationIcon" />
