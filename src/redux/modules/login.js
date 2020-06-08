@@ -1,8 +1,8 @@
 const initialState = {
-    username: "",
+    username: localStorage.getItem('username') || '',
     password: "",
     isFetching: false,
-    status: false, //登录状态标识
+    status: localStorage.getItem('login') || false, //登录状态标识
 }
 
 //action types
@@ -20,7 +20,7 @@ export const types = {
 //action creators
 export const actions = {
     //异步action，
-    login:() => {
+    login: () => {
         return (dispatch, getState) => {
             const { username, password } = getState().login;
             if (!(username && username.length > 0 && password && password.length > 0)) {
@@ -31,14 +31,20 @@ export const actions = {
             return new Promise((reslove, reject) => {
                 setTimeout(() => {
                     dispatch(loginSuccess())
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('login', true);
                     reslove();
                 }, 1000)
             })
         }
     },
-    logout: () => ({
-        type: types.LOGOUT
-    }),
+    logout: () => {
+        localStorage.removeItem('username');
+        localStorage.removeItem('login');
+        return {
+            type: types.LOGOUT
+        };
+    },
     setUsername: (username) => ({
         type: types.SET_USERNAME,
         username
@@ -74,7 +80,7 @@ const reducer = (state = initialState, action) => {
         case types.LOGIN_FAILURE:
             return { ...state, isFetching: false };
         case types.LOGOUT:
-            return { ...state, status: false, username:"", password:"" };
+            return { ...state, status: false, username: "", password: "" };
         case types.SET_USERNAME:
             return { ...state, username: action.username };
         case types.SET_PASSWORD:
