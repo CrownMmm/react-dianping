@@ -34,7 +34,7 @@ class OrderItem extends Component {
 
   //删除订单
   handleRemove = () => {
-    this.props.onRemove();
+    this.props.onRemove()
   }
 }
 
