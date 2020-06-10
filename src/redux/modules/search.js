@@ -51,8 +51,7 @@ const initialState = {
    *    }
    * }
    */
-  searchedShopsByKeyword: {},
-
+  searchedShopsByKeyword: {}
 };
 
 export const actions = {
